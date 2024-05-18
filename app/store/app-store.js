@@ -11,7 +11,7 @@ export const useStore = create(set => ({
 	closePopup: () => set({ popupIsOpened: false }),
 
 	login: (user, token) => {
-		set({ isAuth: true, user, token });
+		set({ isAuth: true, user: { ...user, id: user._id }, token: jwt });
 		setJWT(token);
 	},
 	logout: () => {
