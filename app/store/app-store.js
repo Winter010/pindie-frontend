@@ -7,6 +7,7 @@ export const useStore = create(set => ({
 	isAuth: false,
 	user: null,
 	token: null,
+	
 	openPopup: () => set({ popupIsOpened: true }),
 	closePopup: () => set({ popupIsOpened: false }),
 
@@ -18,6 +19,7 @@ export const useStore = create(set => ({
 		set({ isAuth: false, user: null, token: null });
 		removeJWT();
 	},
+	
 	checkAuth: async () => {
 		const jwt = getJWT();
 		if (jwt) {
